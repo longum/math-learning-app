@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh issue:*)",
+      "Bash(claude skills:*)",
+      "Bash(cp:*)",
+      "Bash(~/.claude/plugins/known_marketplaces.json:*)",
+      "Bash(~/.claude/plugins/installed_plugins.json:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(timeout 10 npm run:*)",
+      "Bash(npm run:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
