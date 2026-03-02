@@ -26,7 +26,7 @@ function App() {
             }
           />
           <Route
-            path="/numbers"
+            path="/number/:level"
             element={
               <ProtectedRoute>
                 <NumberPage />
@@ -34,7 +34,7 @@ function App() {
             }
           />
           <Route
-            path="/addition"
+            path="/addition/:level"
             element={
               <ProtectedRoute>
                 <AdditionPage />
@@ -42,7 +42,7 @@ function App() {
             }
           />
           <Route
-            path="/subtraction"
+            path="/subtraction/:level"
             element={
               <ProtectedRoute>
                 <SubtractionPage />

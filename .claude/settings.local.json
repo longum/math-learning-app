@@ -19,7 +19,13 @@
       "Bash(pkill:*)",
       "Bash(npm test:*)",
       "Bash(git reset:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(gh repo:*)",
+      "Bash(git:*)",
+      "Bash(gh api:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh run:*)",
+      "Bash(open:*)"
     ]
   }
 }
