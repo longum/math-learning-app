@@ -11,7 +11,11 @@
       "Bash(timeout 10 npm run:*)",
       "Bash(npm run:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npx tsc:*)",
+      "Bash(/tmp/test-error-handling.js:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)"
     ]
   }
 }
