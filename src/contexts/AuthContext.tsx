@@ -20,6 +20,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setIsAuthenticated(true);
       setUser(authState.user);
     }
+
+    // Set up periodic expiration check (every 60 seconds)
+    const expirationCheck = setInterval(() => {
+      const currentAuthState = getAuthState();
+      if (!currentAuthState?.isAuthenticated && isAuthenticated) {
+        // Session expired, log out user
+        setIsAuthenticated(false);
+        setUser(null);
+      }
+    }, 60000); // Check every minute
+
+    return () => clearInterval(expirationCheck);
   }, []);
 
   const login = async (username: string, password: string): Promise<boolean> => {
