@@ -2,6 +2,9 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
+import NumberPage from './pages/NumberPage'
+import AdditionPage from './pages/AdditionPage'
+import SubtractionPage from './pages/SubtractionPage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -19,6 +22,30 @@ function App() {
             element={
               <ProtectedRoute>
                 <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/numbers"
+            element={
+              <ProtectedRoute>
+                <NumberPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/addition"
+            element={
+              <ProtectedRoute>
+                <AdditionPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/subtraction"
+            element={
+              <ProtectedRoute>
+                <SubtractionPage />
               </ProtectedRoute>
             }
           />

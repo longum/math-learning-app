@@ -31,3 +31,5 @@ export function parseNumberToBlocks(num: number, difficulty: DifficultyLevel): B
 
   return blocks;
 }
+
+export type { DifficultyLevel } from '../types';
