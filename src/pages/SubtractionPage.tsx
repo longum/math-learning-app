@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { BlocksDisplay } from '../components/BlocksDisplay';
 import { generateSubtractionAnimation } from '../utils/subtractionGenerator';
-import { DifficultyLevel } from '../utils/numberParser';
 import { validateEquation } from '../utils/validator';
-import { AnimationStep, Block } from '../types';
+import { AnimationStep, Block, DifficultyLevel } from '../types';
 
 const SubtractionPage: React.FC = () => {
+  const { level } = useParams<{ level: string }>();
+  const difficulty: DifficultyLevel = (level === 'level1' || level === 'level2' ? level : 'level1');
   const [num1, setNum1] = useState<string>('');
   const [num2, setNum2] = useState<string>('');
-  const [difficulty, setDifficulty] = useState<DifficultyLevel>('level1');
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [animationSteps, setAnimationSteps] = useState<AnimationStep[]>([]);
   const [error, setError] = useState<string>('');
@@ -112,18 +113,12 @@ const SubtractionPage: React.FC = () => {
               </div>
 
               <div>
-                <label htmlFor="difficulty" className="block text-sm font-medium text-gray-700 mb-2">
-                  Difficulty Level
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Difficulty Level: {difficulty === 'level1' ? '1-100' : '1-1000'}
                 </label>
-                <select
-                  id="difficulty"
-                  value={difficulty}
-                  onChange={(e) => setDifficulty(e.target.value as DifficultyLevel)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                >
-                  <option value="level1">Level 1: Tens and Ones</option>
-                  <option value="level2">Level 2: Hundreds, Tens, Ones</option>
-                </select>
+                <div className="text-sm text-gray-600">
+                  {difficulty === 'level1' ? 'Level 1: Tens and Ones (0-99)' : 'Level 2: Hundreds, Tens, Ones (100-999)'}
+                </div>
               </div>
 
               <div className="flex gap-2">

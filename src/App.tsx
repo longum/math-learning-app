@@ -5,6 +5,8 @@ import HomePage from './pages/HomePage'
 import NumberPage from './pages/NumberPage'
 import AdditionPage from './pages/AdditionPage'
 import SubtractionPage from './pages/SubtractionPage'
+import TestPage from './pages/TestPage'
+import SimpleAdditionPage from './pages/SimpleAdditionPage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
@@ -17,6 +19,8 @@ function App() {
       <div className="min-h-screen bg-gray-100">
         <Routes>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/test" element={<TestPage />} />
+          <Route path="/simple-addition" element={<SimpleAdditionPage />} />
           <Route
             path="/home"
             element={
