@@ -15,7 +15,9 @@
       "Bash(npx tsc:*)",
       "Bash(/tmp/test-error-handling.js:*)",
       "Bash(curl:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(pkill:*)",
+      "Bash(npm test:*)"
     ]
   }
 }
